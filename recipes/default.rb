@@ -30,22 +30,22 @@ when 'redhat', 'centos', 'scientific', 'amazon'
     sssd_action = 'install'
     # amazon linux requires authconfig update to avoid bugs with multiple LDAP servers
     authconfig_action = 'upgrade'
-    node.default['authconfig']['ldap']['packages'] = ['nss-pam-ldapd']
+    node.default['authconfig']['ldap']['packages'] = ['nss-pam-ldapd','krb5-libs']
   when 2016
     sssd_action = 'install'
     # amazon linux requires authconfig update to avoid bugs with multiple LDAP servers
     authconfig_action = 'upgrade'
-    node.default['authconfig']['ldap']['packages'] = ['nss-pam-ldapd']
+    node.default['authconfig']['ldap']['packages'] = ['nss-pam-ldapd','krb5-libs']
   when 2015
     sssd_action = 'install'
     # amazon linux requires authconfig update to avoid bugs with multiple LDAP servers
     authconfig_action = 'upgrade'
-    node.default['authconfig']['ldap']['packages'] = ['nss-pam-ldapd']
+    node.default['authconfig']['ldap']['packages'] = ['nss-pam-ldapd','krb5-libs']
   when 2014
     sssd_action = 'install'
     # amazon linux requires authconfig update to avoid bugs with multiple LDAP servers
     authconfig_action = 'upgrade'
-    node.default['authconfig']['ldap']['packages'] = ['nss-pam-ldapd']  
+    node.default['authconfig']['ldap']['packages'] = ['nss-pam-ldapd','krb5-libs']  
   when 7
     sssd_action = 'install'
     # CentOS 7 requires authconfig update to avoid bugs with multiple LDAP servers
@@ -85,7 +85,7 @@ when 'redhat', 'centos', 'scientific', 'amazon'
   end
 
 when 'amazon'
-  node.default['authconfig']['ldap']['packages'] = ['nss-pam-ldapd','pam_ldap']
+  node.default['authconfig']['ldap']['packages'] = ['nss-pam-ldapd','pam_ldap','krb5-libs']
   authconfig_action = 'install'
 
 else
